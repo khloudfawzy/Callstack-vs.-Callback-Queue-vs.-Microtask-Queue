@@ -1,4 +1,4 @@
-**Callstack-vs.-Callback-Queue-vs.-Microtask-Queue**
+**Callstack vs. Callback Queue vs. Microtask Queue**
 
 Javascript has only one thread of execution, but It still can handle asynchronous operations. How is that?
 By the use of CallStack, Callback queue and microtask queue.
