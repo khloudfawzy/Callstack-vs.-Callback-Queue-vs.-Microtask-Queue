@@ -14,7 +14,7 @@ Callstack is a real data structure stack that follows the (Last-In-First-Out) LI
     }
       
     function function2() {
-      f1();
+      function1();
       console.log('this is the second function!');
     }
       
