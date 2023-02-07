@@ -1,5 +1,5 @@
 Javascript has only one thread of execution, but It still can handle asynchronous operations. How is that?
-By the use of CallStack, Callback queue and microTask queue
+By the use of CallStack, Callback queue and microtask queue
 
 **CallStack:**
 
@@ -88,16 +88,16 @@ Asynchronous callback functions are pushed into the callback queue, then it's pu
     8- now the callstack is empty and the setTimeout will be moved from the Callback queue to the callstack by the event loop
     9- it prints 'Second!', then it'll be removed from the callstack
 
-**MicroTask queue:**
+**Microtask queue:**
 
-microTask queue handles promise operations.
+microtask queue handles promise operations.
 when a peomise is ready, its .then/catch/finally handlers are put into the queue
-but it's not executed, yet. tha tasks in the microTask queue is executed **after** callstack is done with all synchronous code and **before** executing the tasks in the callback queue
+but it's not executed, yet. tha tasks in the microtask queue is executed **after** callstack is done with all synchronous code and **before** executing the tasks in the callback queue
 
 **So the otder is like this:**
 
     1- callstack
-    2- microTask queue
+    2- microtask queue
     3- Callback queue
 
 
