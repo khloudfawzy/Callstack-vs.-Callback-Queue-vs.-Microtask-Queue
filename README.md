@@ -1,10 +1,11 @@
 Javascript has only one thread of execution, but It still can handle asynchronous operations. How is that?
-By the use of CallStack, Callback queue and microtask queue
+By the use of CallStack, Callback queue and microtask queue.
 
 **CallStack:**
 
-it's used by javascript to keep track of multiple function calls, synchronous code is pushed into the callStack first
-call stack is a real data structure stack that follows the (Last-In-First-Out) LIFO principle
+it's used by javascript to keep track of multiple function calls, synchronous code is pushed into the callStack first.
+
+Callstack is a real data structure stack that follows the (Last-In-First-Out) LIFO principle.
 
 **Example:**
 
@@ -29,19 +30,20 @@ call stack is a real data structure stack that follows the (Last-In-First-Out) L
 
 when the app loads in memory
 
-    1- the global execution context is pushed to the call stack
-    2- then function2 gets called, and it's also pushed to the call stack
-    3- while calling function2, function1 is called inside, so it's pushed to the call stack
+    1- the global execution context is pushed to the callstack
+    2- then function2 gets called, and it's also pushed to the callstack
+    3- while calling function2, function1 is called inside, so it's pushed to the callstack
     4- following the LIFO principle, function1 will be executed first and the concole.log statement will run and print 'this is the first function!'
     5- after function1 is done it's removed from the stack, and the execution of function2 continues and prints 'this is the second function!'
     6- function1 will be removed from the stack
 
-before talking about callback queue and microtask queue, we need to mention something very important in javascript
+before talking about callback queue and microtask queue, we need to mention something very important in javascript.
+
 that's **Event Loop**
 
 **Event Loop**
 
-The event loop is what helps javascript to checks whether the call stack is empty or not
+Event loop is what helps javascript to checks whether the callstack is empty or not
 
 **Why is that important?**
 
@@ -50,7 +52,7 @@ Because if the callstack is done with executing all synchronous code, and it's n
 
 **Callback queue:**
 It is a data structure that operates on the (first-in-first-out) FIFO principle.
-Asynchronous callback functions are pushed into the callback queue, then it's pushed to the callstack by the event loop when the callstack is empty
+Asynchronous callback functions are pushed into the callback queue, then it's pushed to the callstack by the Event loop when the callstack is empty
 
 **Example:**
 
@@ -90,9 +92,9 @@ Asynchronous callback functions are pushed into the callback queue, then it's pu
 
 **Microtask queue:**
 
-microtask queue handles promise operations.
-when a peomise is ready, its .then/catch/finally handlers are put into the queue
-but it's not executed, yet. tha tasks in the microtask queue is executed **after** callstack is done with all synchronous code and **before** executing the tasks in the callback queue
+Microtask queue handles promise operations.
+When a promise is ready, its .then/catch/finally handlers are put into the queue.
+But it's not executed, yet. tha tasks in the microtask queue is executed **after** callstack is done with all synchronous code and **before** executing the tasks in the callback queue.
 
 **So the otder is like this:**
 
